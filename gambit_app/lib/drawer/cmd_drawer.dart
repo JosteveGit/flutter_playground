@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gambit_app/global/theme/theme.dart';
 import 'package:gambit_app/models/cmd_nav_model.dart';
 
+import 'cmd_nav bloc.dart';
 import 'collapsing_list_tile.dart';
 
 class CmdDrawer extends StatefulWidget {
@@ -35,13 +37,15 @@ class CmdDrawerState extends State<CmdDrawer>
 
   @override
   Widget build(BuildContext context) {
+    final CmdNavBloc bloc = BlocProvider.of<CmdNavBloc>(context);
+    
     return AnimatedBuilder(
       animation: _animationController,
-      builder: (context, widget) => getWidget(context, widget),
+      builder: (context, widget) => getWidget(bloc, context, widget),
     );
   }
 
-  Widget getWidget(context, widget) {
+  Widget getWidget(CmdNavBloc bloc, context, widget) {
     return Material(
       elevation: 80.0,
       child: Container(
@@ -64,6 +68,7 @@ class CmdDrawerState extends State<CmdDrawer>
                   return CollapsingListTile(
                     onTap: () {
                       setState(() {
+                        bloc.add(navigationItems[counter].navigationEvent);
                         currentSelectedIndex = counter;
                       });
                     },

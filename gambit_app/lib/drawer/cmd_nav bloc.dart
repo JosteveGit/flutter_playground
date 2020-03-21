@@ -16,8 +16,17 @@ enum NavigationEvents {
 
 abstract class NavigationStates {}
 
-class CmdNavBloc extends Bloc<NavigationEvents, NavigationStates> {
+class Dashboard extends NavigationStates {}
 
+class Search extends NavigationStates {}
+
+class Notifications extends NavigationStates {}
+
+class Errors extends NavigationStates {}
+
+class Settings extends NavigationStates {}
+
+class CmdNavBloc extends Bloc<NavigationEvents, NavigationStates> {
   @override
   NavigationStates get initialState => DashBoardPage();
 
@@ -41,6 +50,4 @@ class CmdNavBloc extends Bloc<NavigationEvents, NavigationStates> {
         break;
     }
   }
-
-
 }
