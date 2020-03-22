@@ -1,11 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../pages/dashboardpage.dart';
-import '../pages/searchpage.dart';
-import '../pages/notificationspage.dart';
-import '../pages/errorpage.dart';
-import '../pages/settingspage.dart';
-
 enum NavigationEvents {
   DashboardClickedEvent,
   SearchClickedEvent,
@@ -28,25 +22,25 @@ class Settings extends NavigationStates {}
 
 class CmdNavBloc extends Bloc<NavigationEvents, NavigationStates> {
   @override
-  NavigationStates get initialState => DashBoardPage();
+  NavigationStates get initialState => Dashboard();
 
   @override
   Stream<NavigationStates> mapEventToState(NavigationEvents event) async* {
     switch (event) {
       case NavigationEvents.DashboardClickedEvent:
-        yield DashBoardPage();
+        yield Dashboard();
         break;
       case NavigationEvents.SearchClickedEvent:
-        yield SearchPage();
+        yield Search();
         break;
       case NavigationEvents.NotificationsClickedEvent:
-        yield NotificationsPage();
+        yield Notifications();
         break;
       case NavigationEvents.ErrorsClickedEvent:
-        yield ErrorsPage();
+        yield Errors();
         break;
       case NavigationEvents.SettingsClickedEvent:
-        yield SettingsPage();
+        yield Settings();
         break;
     }
   }

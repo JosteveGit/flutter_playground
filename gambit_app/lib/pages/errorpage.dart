@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../drawer/cmd_nav%20bloc.dart';
-
-class ErrorsPage extends StatelessWidget with NavigationStates {
+class ErrorsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(

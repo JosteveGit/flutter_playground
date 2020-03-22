@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../drawer/cmd_nav%20bloc.dart';
-
-class SearchPage extends StatelessWidget with NavigationStates {
+class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(

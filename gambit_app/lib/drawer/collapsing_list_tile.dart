@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gambit_app/global/theme/theme.dart';
+import 'package:gambit_app/global/theme/theme_changer.dart';
+import 'package:gambit_app/utils/Constants.dart';
 
 class CollapsingListTile extends StatefulWidget {
   final String title;
@@ -26,8 +28,8 @@ class _CollapsingListTileState extends State<CollapsingListTile> {
   void initState() {
     super.initState();
     widthAnimation = Tween<double>(
-      begin: 70,
-      end: 220,
+      begin: Constants.minWidth,
+      end: Constants.maxWidth,
     ).animate(widget.animationController);
     sizedBoxAnimation = Tween<double>(
       begin: 0,
@@ -50,21 +52,21 @@ class _CollapsingListTileState extends State<CollapsingListTile> {
         ),
         width: widthAnimation.value,
         margin: EdgeInsets.symmetric(
-          horizontal: 8.0,
+          horizontal: Constants.containerMargin,
         ),
         padding: EdgeInsets.symmetric(
-          horizontal: 8.0,
-          vertical: 8.0,
+          horizontal: Constants.containerPadding,
+          vertical: Constants.containerPadding,
         ),
         child: Row(
           children: <Widget>[
             Icon(
               widget.icon,
-              color: widget.isSelected ? selectedColor : Colors.white30,
+              color: widget.isSelected ? Theme.of(context).accentColor : CustomColors().lureGrey,
               size: 38.0,
             ),
             SizedBox(width: sizedBoxAnimation.value),
-            (widthAnimation.value >= 220)
+            (widthAnimation.value >= Constants.maxWidth)
                 ? Text(
                     widget.title,
                     style: widget.isSelected

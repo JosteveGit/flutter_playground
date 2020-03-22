@@ -19,23 +19,32 @@ class ThemeChanger with ChangeNotifier {
  */
 class CustomColors {
   final novaWhite = Color(0xffe1e7e9);
-  final loreGrey = Color(0xff6c7a84);
-  final noroGrey = Color(0xff424b51);
+  final lureGrey = Color(0xff6c7a84);
+  final noroGrey = Color(0xff545f67);
   final grimBlack = Color(0xff3e3e3e);
-  final skyBlue = Color(0xff1da1f2);
-  final limeGreen = Color(0xff3bd37b);
+  final duskBlue = Color(0xff1da1f2);
+  final oceanBlue = Color(0xFF4AC8EA);
+  final forestGreen = Color(0xff3bd37b);
+  final leafGreen = Color(0xff5bda91);
+
+  //final collapseDrawerLight = Color(0xFFe1e7e9);
+  //final collapseDrawerDark = Color(0xFF272D34);
 
   // Google Material Light Colors
+  /*
   final statusBarLight = Color(0xffE0E0E0);
   final appBarLight = Color(0xffecf0f1);
   final backGroundLight = Color(0xfff5f5f5);
   final cardsDialogLight = Color(0xffFFFFFF);
+  */
 
   // Google Material Dark Colors
+  /*
   final statusBarDark = Color(0xff000000);
   final appBarDark = Color(0xff212121);
   final backGroundDark = Color(0xff303030);
   final cardsDialogDark = Color(0xff424242);
+  */
 }
 
 class CustomThemes {
@@ -207,52 +216,54 @@ class CustomThemes {
 
   static final ThemeData lightTheme = ThemeData(
     //brightness: Brightness.light,
-    //bottomAppBarColor: CustomColors().appBarLight,
 
-    //primaryColor: CustomColors().limeGreen,
+    appBarTheme: AppBarTheme(color: CustomColors().forestGreen,),
+    primaryColor: CustomColors().forestGreen,
+    accentColor: CustomColors().leafGreen,
     //indicatorColor: CustomColors().loreGrey,
-    //accentColor: CustomColors().limeGreen,
-    scaffoldBackgroundColor: CustomColors().backGroundLight,
+    
+    scaffoldBackgroundColor: CustomColors().novaWhite,
 
     backgroundColor: CustomColors().novaWhite,
-    buttonColor: CustomColors().limeGreen,
+    buttonColor: CustomColors().forestGreen,
 
     iconTheme: IconThemeData(
       size: 25.0,
-      color: CustomColors().limeGreen,
+      color: CustomColors().forestGreen,
     ),
 
     dividerTheme: DividerThemeData(
       thickness: 0.5,
       indent: 16,
       endIndent: 16,
-      //color: CustomColors().limeGreen,
+      //color: CustomColors().forestGreen,
     ),
     
   );
 
   static final ThemeData darkTheme = ThemeData(
     //brightness: Brightness.dark,
-    //bottomAppBarColor: CustomColors().appBarDark,
 
-    //primaryColor: CustomColors().skyBlue,
+    appBarTheme: AppBarTheme(color: CustomColors().duskBlue,),
+    primaryColor: CustomColors().duskBlue,
+    accentColor: CustomColors().oceanBlue,
     //indicatorColor: CustomColors().loreGrey,
-    //accentColor: CustomColors().skyBlue,
-    scaffoldBackgroundColor: CustomColors().backGroundDark,
+    
+    scaffoldBackgroundColor: CustomColors().grimBlack,
 
     backgroundColor: CustomColors().grimBlack,
-    buttonColor: CustomColors().skyBlue,
+    buttonColor: CustomColors().duskBlue,
 
     iconTheme: IconThemeData(
       size: 25.0,
-      color: CustomColors().skyBlue,
+      color: CustomColors().duskBlue,
     ),
     
     dividerTheme: DividerThemeData(
       thickness: 0.5,
       indent: 16,
       endIndent: 16,
-      //color: CustomColors().skyBlue,
+      //color: CustomColors().duskBlue,
     ),
   );
 }
